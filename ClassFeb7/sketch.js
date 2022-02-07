@@ -7,11 +7,11 @@ function setup() {
 function draw() {
   background('#023E0C');
   stroke('white');
-  for (let i = 0; i < windowWidth+400; i+= 50)
+  for (let i = 0; i < windowWidth+1000; i+= 50)
   {  
     ellipse(windowWidth/2,windowWidth/2,i,i);
   }
-  for (let alex = 1500; alex >-500 ; alex -= 30)
+  for (let alex = 2000; alex >-2000 ; alex -= 30)
   {
      // ellipseMode(CENTER);
        arc(windowWidth/2, alex, windowWidth,300, 0, PI);
