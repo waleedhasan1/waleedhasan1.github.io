@@ -1,3 +1,5 @@
+
+/*
 function setup() {
   createCanvas(400, 400);
 }
@@ -17,4 +19,21 @@ function draw() {
     angle = angle + 5;
   }
   
+}
+*/
+
+function setup() {
+  createCanvas(windowWidth, windowWidth);
+  noFill();
+  noLoop();
+}
+
+function draw() {
+  background(220);
+  for (let i = 0; i < width * 0.75; i+= 4)
+    {
+      rectMode(CENTER);
+      let offset = random(-3,3);
+      rect(windowWidth/2 + offset,windowWidth/2 - offset,i,i);
+    }
 }
