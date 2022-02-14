@@ -1,7 +1,7 @@
 //I stole this function from https://www.w3resource.com/javascript-exercises/javascript-math-exercise-43.php#:~:text=JavaScript%20Code%3A,(primeFactorsTo(5))%3B%20console.
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(windowWidth + 1000, windowHeight + 1000);
 }
 
 function mousePressed(event) {
