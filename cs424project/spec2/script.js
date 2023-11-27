@@ -2,7 +2,7 @@ const spec1 = {
   "config": {"view": {"continuousWidth": 300, "continuousHeight": 300}},
   "hconcat": [
     {
-      "data": {"name": "data-e67b5037ab95e8e8f2afdf91d1ff10c0"},
+      "data": {"name": "data-1b200d13d98fe3ded286d62e7abb9256"},
       "mark": {"type": "point"},
       "encoding": {
         "color": {
@@ -20,18 +20,18 @@ const spec1 = {
           "type": "quantitative"
         }
       },
-      "name": "view_29"
+      "name": "view_47"
     },
     {
       "layer": [
         {
           "data": {"name": "data-2879a800563f68897ea9039d9533ed32"},
           "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"},
-          "name": "view_27",
+          "name": "view_45",
           "projection": {"type": "albersUsa"}
         },
         {
-          "data": {"name": "data-e67b5037ab95e8e8f2afdf91d1ff10c0"},
+          "data": {"name": "data-1b200d13d98fe3ded286d62e7abb9256"},
           "mark": {"type": "circle", "size": 10},
           "encoding": {
             "color": {
@@ -45,7 +45,7 @@ const spec1 = {
               {"field": "Daily Average", "type": "quantitative"}
             ]
           },
-          "name": "view_28"
+          "name": "view_46"
         }
       ],
       "height": 300,
@@ -53,31 +53,30 @@ const spec1 = {
     }
   ],
   "params": [
-    {"name": "SELECTOR", "select": {"type": "interval"}, "views": ["view_29"]},
+    {"name": "SELECTOR", "select": {"type": "interval"}, "views": ["view_47"]},
     {
-      "name": "param_28",
+      "name": "param_49",
       "select": {"type": "interval", "encodings": ["x", "y"]},
       "bind": "scales",
-      "views": ["view_27"]
+      "views": ["view_45"]
     },
     {
-      "name": "param_29",
+      "name": "param_50",
       "select": {"type": "interval", "encodings": ["x", "y"]},
       "bind": "scales",
-      "views": ["view_28"]
+      "views": ["view_46"]
     },
     {
-      "name": "param_30",
+      "name": "param_51",
       "select": {"type": "interval", "encodings": ["x", "y"]},
       "bind": "scales",
-      "views": ["view_27"]
+      "views": ["view_45"]
     }
   ],
   "$schema": "https://vega.github.io/schema/vega-lite/v5.15.1.json",
   "datasets": {
-    "data-e67b5037ab95e8e8f2afdf91d1ff10c0": [
+    "data-1b200d13d98fe3ded286d62e7abb9256": [
       {
-        "index": 0,
         "CAMERA ID": "CHI189",
         "Daily Average": 319.3370786516854,
         "LATITUDE": 41.8992952,
@@ -85,7 +84,6 @@ const spec1 = {
         "zip": "60610"
       },
       {
-        "index": 178,
         "CAMERA ID": "CHI193",
         "Daily Average": 295.22222222222223,
         "LATITUDE": 42.011620488,
@@ -93,7 +91,6 @@ const spec1 = {
         "zip": "60714"
       },
       {
-        "index": 259,
         "CAMERA ID": "CHI197",
         "Daily Average": 260.5735294117647,
         "LATITUDE": 41.744224124,
@@ -101,7 +98,6 @@ const spec1 = {
         "zip": "60619"
       },
       {
-        "index": 395,
         "CAMERA ID": "CHI191",
         "Daily Average": 259.22346368715085,
         "LATITUDE": 41.967862782,
@@ -109,7 +105,6 @@ const spec1 = {
         "zip": "60630"
       },
       {
-        "index": 574,
         "CAMERA ID": "CHI149",
         "Daily Average": 203.4966910484152,
         "LATITUDE": 41.970134736,
@@ -117,7 +112,6 @@ const spec1 = {
         "zip": "60630"
       },
       {
-        "index": 3445,
         "CAMERA ID": "CHI186",
         "Daily Average": 175.61256544502618,
         "LATITUDE": 41.924949513,
@@ -125,7 +119,6 @@ const spec1 = {
         "zip": "60647"
       },
       {
-        "index": 3636,
         "CAMERA ID": "CHI045",
         "Daily Average": 172.25022421524665,
         "LATITUDE": 41.663174059,
@@ -133,7 +126,6 @@ const spec1 = {
         "zip": "60827"
       },
       {
-        "index": 6981,
         "CAMERA ID": "CHI079",
         "Daily Average": 146.10675216899284,
         "LATITUDE": 41.953875265,
@@ -141,7 +133,6 @@ const spec1 = {
         "zip": "60618"
       },
       {
-        "index": 9632,
         "CAMERA ID": "CHI029",
         "Daily Average": 141.3306208559373,
         "LATITUDE": 41.793492646,
@@ -149,7 +140,6 @@ const spec1 = {
         "zip": "60615"
       },
       {
-        "index": 12950,
         "CAMERA ID": "CHI174",
         "Daily Average": 136.52877307274701,
         "LATITUDE": 41.944318833,
@@ -157,7 +147,6 @@ const spec1 = {
         "zip": "60634"
       },
       {
-        "index": 14792,
         "CAMERA ID": "CHI003",
         "Daily Average": 128.93885001521144,
         "LATITUDE": 41.975605302,
@@ -165,7 +154,6 @@ const spec1 = {
         "zip": "60630"
       },
       {
-        "index": 18079,
         "CAMERA ID": "CHI120",
         "Daily Average": 127.81685870224378,
         "LATITUDE": 41.707576903,
@@ -173,7 +161,6 @@ const spec1 = {
         "zip": "60617"
       },
       {
-        "index": 21377,
         "CAMERA ID": "CHI146",
         "Daily Average": 125.4973221117062,
         "LATITUDE": 41.780056987,
@@ -181,7 +168,6 @@ const spec1 = {
         "zip": "60637"
       },
       {
-        "index": 22684,
         "CAMERA ID": "CHI021",
         "Daily Average": 120.247009569378,
         "LATITUDE": 41.860407864,
@@ -189,7 +175,6 @@ const spec1 = {
         "zip": "60623"
       },
       {
-        "index": 26028,
         "CAMERA ID": "CHI147",
         "Daily Average": 117.1426909654905,
         "LATITUDE": 41.967902328,
@@ -197,1316 +182,11 @@ const spec1 = {
         "zip": "60630"
       },
       {
-        "index": 28607,
         "CAMERA ID": "CHI201",
         "Daily Average": 110.02142857142857,
         "LATITUDE": 41.95389316,
         "LONGITUDE": -87.690933468,
         "zip": "60618"
-      },
-      {
-        "index": 28747,
-        "CAMERA ID": "CHI095",
-        "Daily Average": 102.11568746214415,
-        "LATITUDE": 41.954540866,
-        "LONGITUDE": -87.658572521,
-        "zip": "60613"
-      },
-      {
-        "index": 32049,
-        "CAMERA ID": "CHI144",
-        "Daily Average": 94.29144620811287,
-        "LATITUDE": 41.835958018,
-        "LONGITUDE": -87.668790267,
-        "zip": "60609"
-      },
-      {
-        "index": 34317,
-        "CAMERA ID": "CHI184",
-        "Daily Average": 84.90728476821192,
-        "LATITUDE": 41.765301338,
-        "LONGITUDE": -87.60498537,
-        "zip": "60637"
-      },
-      {
-        "index": 35072,
-        "CAMERA ID": "CHI192",
-        "Daily Average": 82.56476683937824,
-        "LATITUDE": 41.975775196,
-        "LONGITUDE": -87.779020068,
-        "zip": "60630"
-      },
-      {
-        "index": 35265,
-        "CAMERA ID": "CHI007",
-        "Daily Average": 81.03653271338426,
-        "LATITUDE": 41.823563957,
-        "LONGITUDE": -87.684721126,
-        "zip": "60609"
-      },
-      {
-        "index": 38276,
-        "CAMERA ID": "CHI173",
-        "Daily Average": 76.4017094017094,
-        "LATITUDE": 41.802705576,
-        "LONGITUDE": -87.683844789,
-        "zip": "60632"
-      },
-      {
-        "index": 39095,
-        "CAMERA ID": "CHI187",
-        "Daily Average": 72.5,
-        "LATITUDE": 41.915341155,
-        "LONGITUDE": -87.634025893,
-        "zip": "60610"
-      },
-      {
-        "index": 39239,
-        "CAMERA ID": "CHI028",
-        "Daily Average": 71.02528276779773,
-        "LATITUDE": 41.946607822,
-        "LONGITUDE": -87.69265244,
-        "zip": "60618"
-      },
-      {
-        "index": 40742,
-        "CAMERA ID": "CHI077",
-        "Daily Average": 70.24070743405275,
-        "LATITUDE": 41.883191521,
-        "LONGITUDE": -87.6641147,
-        "zip": "60607"
-      },
-      {
-        "index": 44078,
-        "CAMERA ID": "CHI194",
-        "Daily Average": 69.79190751445087,
-        "LATITUDE": 41.77133232,
-        "LONGITUDE": -87.735451401,
-        "zip": "60629"
-      },
-      {
-        "index": 44251,
-        "CAMERA ID": "CHI058",
-        "Daily Average": 67.72447424565681,
-        "LATITUDE": 41.877189405,
-        "LONGITUDE": -87.770369502,
-        "zip": "60302"
-      },
-      {
-        "index": 47532,
-        "CAMERA ID": "CHI031",
-        "Daily Average": 62.39658568614576,
-        "LATITUDE": 41.801401913,
-        "LONGITUDE": -87.723544598,
-        "zip": "60632"
-      },
-      {
-        "index": 49055,
-        "CAMERA ID": "CHI026",
-        "Daily Average": 62.21975308641975,
-        "LATITUDE": 41.945574091,
-        "LONGITUDE": -87.688077853,
-        "zip": "60618"
-      },
-      {
-        "index": 50270,
-        "CAMERA ID": "CHI182",
-        "Daily Average": 61.45793103448276,
-        "LATITUDE": 41.903267607,
-        "LONGITUDE": -87.664557225,
-        "zip": "60642"
-      },
-      {
-        "index": 50995,
-        "CAMERA ID": "CHI024",
-        "Daily Average": 61.07620817843866,
-        "LATITUDE": 41.990281914,
-        "LONGITUDE": -87.708244626,
-        "zip": "60659"
-      },
-      {
-        "index": 54223,
-        "CAMERA ID": "CHI181",
-        "Daily Average": 59.75033025099075,
-        "LATITUDE": 41.765711382,
-        "LONGITUDE": -87.604809732,
-        "zip": "60637"
-      },
-      {
-        "index": 54980,
-        "CAMERA ID": "CHI121",
-        "Daily Average": 59.45890410958904,
-        "LATITUDE": 41.793645091,
-        "LONGITUDE": -87.657860764,
-        "zip": "60636"
-      },
-      {
-        "index": 58338,
-        "CAMERA ID": "CHI091",
-        "Daily Average": 59.174925174592616,
-        "LATITUDE": 41.926418831,
-        "LONGITUDE": -87.668042465,
-        "zip": "60614"
-      },
-      {
-        "index": 61345,
-        "CAMERA ID": "CHI143",
-        "Daily Average": 58.01551590380139,
-        "LATITUDE": 41.85250181,
-        "LONGITUDE": -87.662810318,
-        "zip": "60608"
-      },
-      {
-        "index": 62634,
-        "CAMERA ID": "CHI014",
-        "Daily Average": 57.1150521609538,
-        "LATITUDE": 41.767731869,
-        "LONGITUDE": -87.702737907,
-        "zip": "60629"
-      },
-      {
-        "index": 65989,
-        "CAMERA ID": "CHI004",
-        "Daily Average": 56.96281859070465,
-        "LATITUDE": 41.974332655,
-        "LONGITUDE": -87.728347022,
-        "zip": "60625"
-      },
-      {
-        "index": 69324,
-        "CAMERA ID": "CHI051",
-        "Daily Average": 56.60017969451932,
-        "LATITUDE": 42.000259511,
-        "LONGITUDE": -87.689802909,
-        "zip": "60645"
-      },
-      {
-        "index": 72663,
-        "CAMERA ID": "CHI027",
-        "Daily Average": 56.23768569194684,
-        "LATITUDE": 41.945962587,
-        "LONGITUDE": -87.688383964,
-        "zip": "60618"
-      },
-      {
-        "index": 73942,
-        "CAMERA ID": "CHI083",
-        "Daily Average": 54.94669446098868,
-        "LATITUDE": 41.953074826,
-        "LONGITUDE": -87.782825538,
-        "zip": "60706"
-      },
-      {
-        "index": 77300,
-        "CAMERA ID": "CHI013",
-        "Daily Average": 54.457306073361394,
-        "LATITUDE": 41.797703886,
-        "LONGITUDE": -87.606444779,
-        "zip": "60615"
-      },
-      {
-        "index": 80626,
-        "CAMERA ID": "CHI019",
-        "Daily Average": 52.97685602645026,
-        "LATITUDE": 41.866364024,
-        "LONGITUDE": -87.699142966,
-        "zip": "60612"
-      },
-      {
-        "index": 83953,
-        "CAMERA ID": "CHI198",
-        "Daily Average": 52.2,
-        "LATITUDE": 41.921841178,
-        "LONGITUDE": -87.706978686,
-        "zip": "60647"
-      },
-      {
-        "index": 84093,
-        "CAMERA ID": "CHI190",
-        "Daily Average": 50.8875,
-        "LATITUDE": 41.946407936,
-        "LONGITUDE": -87.735625416,
-        "zip": "60641"
-      },
-      {
-        "index": 84173,
-        "CAMERA ID": "CHI115",
-        "Daily Average": 50.8217000691085,
-        "LATITUDE": 41.989807669,
-        "LONGITUDE": -87.746225804,
-        "zip": "60646"
-      },
-      {
-        "index": 85620,
-        "CAMERA ID": "CHI202",
-        "Daily Average": 49.676767676767675,
-        "LATITUDE": 41.794045046,
-        "LONGITUDE": -87.723036363,
-        "zip": "60629"
-      },
-      {
-        "index": 85719,
-        "CAMERA ID": "CHI050",
-        "Daily Average": 48.54465637299425,
-        "LATITUDE": 41.953329545,
-        "LONGITUDE": -87.764267264,
-        "zip": "60641"
-      },
-      {
-        "index": 89022,
-        "CAMERA ID": "CHI169",
-        "Daily Average": 46.415588513726725,
-        "LATITUDE": 41.742473855,
-        "LONGITUDE": -87.66338548,
-        "zip": "60620"
-      },
-      {
-        "index": 92191,
-        "CAMERA ID": "CHI044",
-        "Daily Average": 45.70745341614907,
-        "LATITUDE": 41.92410633,
-        "LONGITUDE": -87.748022664,
-        "zip": "60639"
-      },
-      {
-        "index": 93801,
-        "CAMERA ID": "CHI018",
-        "Daily Average": 45.23453839259038,
-        "LATITUDE": 41.769276221,
-        "LONGITUDE": -87.703062595,
-        "zip": "60629"
-      },
-      {
-        "index": 97148,
-        "CAMERA ID": "CHI119",
-        "Daily Average": 45.07659831121833,
-        "LATITUDE": 41.794226466,
-        "LONGITUDE": -87.658709999,
-        "zip": "60636"
-      },
-      {
-        "index": 100464,
-        "CAMERA ID": "CHI100",
-        "Daily Average": 43.67923186344239,
-        "LATITUDE": 41.80217403,
-        "LONGITUDE": -87.684106558,
-        "zip": "60632"
-      },
-      {
-        "index": 101870,
-        "CAMERA ID": "CHI009",
-        "Daily Average": 43.5964649490713,
-        "LATITUDE": 41.880938186,
-        "LONGITUDE": -87.717898449,
-        "zip": "60624"
-      },
-      {
-        "index": 105208,
-        "CAMERA ID": "CHI158",
-        "Daily Average": 41.063380281690144,
-        "LATITUDE": 41.982994527,
-        "LONGITUDE": -87.790832088,
-        "zip": "60631"
-      },
-      {
-        "index": 106628,
-        "CAMERA ID": "CHI108",
-        "Daily Average": 40.734547820429405,
-        "LATITUDE": 41.895448621,
-        "LONGITUDE": -87.727658471,
-        "zip": "60651"
-      },
-      {
-        "index": 108165,
-        "CAMERA ID": "CHI102",
-        "Daily Average": 40.61157768446311,
-        "LATITUDE": 41.969247149,
-        "LONGITUDE": -87.764019451,
-        "zip": "60630"
-      },
-      {
-        "index": 111499,
-        "CAMERA ID": "CHI033",
-        "Daily Average": 38.672750977835726,
-        "LATITUDE": 41.873849599,
-        "LONGITUDE": -87.627447875,
-        "zip": "60602"
-      },
-      {
-        "index": 113033,
-        "CAMERA ID": "CHI185",
-        "Daily Average": 38.666666666666664,
-        "LATITUDE": 41.756110434,
-        "LONGITUDE": -87.656830922,
-        "zip": "60620"
-      },
-      {
-        "index": 113789,
-        "CAMERA ID": "CHI142",
-        "Daily Average": 37.844077961019494,
-        "LATITUDE": 41.720756806,
-        "LONGITUDE": -87.535436787,
-        "zip": "60617"
-      },
-      {
-        "index": 117124,
-        "CAMERA ID": "CHI161",
-        "Daily Average": 37.334438458350604,
-        "LATITUDE": 41.909972425,
-        "LONGITUDE": -87.72805041,
-        "zip": "60651"
-      },
-      {
-        "index": 119537,
-        "CAMERA ID": "CHI020",
-        "Daily Average": 37.29455741626794,
-        "LATITUDE": 41.866585283,
-        "LONGITUDE": -87.698962375,
-        "zip": "60612"
-      },
-      {
-        "index": 122881,
-        "CAMERA ID": "CHI160",
-        "Daily Average": 36.858340318524725,
-        "LATITUDE": 41.866257378,
-        "LONGITUDE": -87.72687882,
-        "zip": "60624"
-      },
-      {
-        "index": 124074,
-        "CAMERA ID": "CHI063",
-        "Daily Average": 36.52305665349144,
-        "LATITUDE": 41.75749704,
-        "LONGITUDE": -87.631833328,
-        "zip": "60620"
-      },
-      {
-        "index": 125592,
-        "CAMERA ID": "CHI093",
-        "Daily Average": 36.21594684385382,
-        "LATITUDE": 41.988904472,
-        "LONGITUDE": -87.668455725,
-        "zip": "60660"
-      },
-      {
-        "index": 128903,
-        "CAMERA ID": "CHI168",
-        "Daily Average": 36.15997470755612,
-        "LATITUDE": 41.741741651,
-        "LONGITUDE": -87.663073329,
-        "zip": "60620"
-      },
-      {
-        "index": 132066,
-        "CAMERA ID": "CHI180",
-        "Daily Average": 36.14736842105263,
-        "LATITUDE": 41.764775432,
-        "LONGITUDE": -87.603827682,
-        "zip": "60637"
-      },
-      {
-        "index": 132826,
-        "CAMERA ID": "CHI127",
-        "Daily Average": 35.854,
-        "LATITUDE": 41.903878079,
-        "LONGITUDE": -87.686902742,
-        "zip": "60622"
-      },
-      {
-        "index": 134326,
-        "CAMERA ID": "CHI148",
-        "Daily Average": 34.151283830673144,
-        "LATITUDE": 41.779297609,
-        "LONGITUDE": -87.615749875,
-        "zip": "60637"
-      },
-      {
-        "index": 135767,
-        "CAMERA ID": "CHI204",
-        "Daily Average": 33.82692307692308,
-        "LATITUDE": 41.818852456,
-        "LONGITUDE": -87.643136511,
-        "zip": "60653"
-      },
-      {
-        "index": 135819,
-        "CAMERA ID": "CHI112",
-        "Daily Average": 33.333564975677554,
-        "LATITUDE": 41.911684016,
-        "LONGITUDE": -87.66757343,
-        "zip": "60622"
-      },
-      {
-        "index": 137258,
-        "CAMERA ID": "CHI138",
-        "Daily Average": 32.896138880574675,
-        "LATITUDE": 41.75874077,
-        "LONGITUDE": -87.57851859,
-        "zip": "60649"
-      },
-      {
-        "index": 140599,
-        "CAMERA ID": "CHI145",
-        "Daily Average": 32.48048624440179,
-        "LATITUDE": 41.736987091,
-        "LONGITUDE": -87.572901178,
-        "zip": "60649"
-      },
-      {
-        "index": 142162,
-        "CAMERA ID": "CHI011",
-        "Daily Average": 32.29953917050691,
-        "LATITUDE": 41.899325141,
-        "LONGITUDE": -87.704522346,
-        "zip": "60622"
-      },
-      {
-        "index": 145417,
-        "CAMERA ID": "CHI080",
-        "Daily Average": 31.250802711380665,
-        "LATITUDE": 41.954092657,
-        "LONGITUDE": -87.696596502,
-        "zip": "60618"
-      },
-      {
-        "index": 148220,
-        "CAMERA ID": "CHI156",
-        "Daily Average": 31.19736842105263,
-        "LATITUDE": 41.986119389,
-        "LONGITUDE": -87.787740827,
-        "zip": "60631"
-      },
-      {
-        "index": 149512,
-        "CAMERA ID": "CHI183",
-        "Daily Average": 30.543835616438358,
-        "LATITUDE": 41.903489549,
-        "LONGITUDE": -87.664284801,
-        "zip": "60642"
-      },
-      {
-        "index": 150242,
-        "CAMERA ID": "CHI032",
-        "Daily Average": 30.50952068286277,
-        "LATITUDE": 41.80293879,
-        "LONGITUDE": -87.722181792,
-        "zip": "60632"
-      },
-      {
-        "index": 151765,
-        "CAMERA ID": "CHI034",
-        "Daily Average": 30.40065789473684,
-        "LATITUDE": 41.873824205,
-        "LONGITUDE": -87.627740759,
-        "zip": "60602"
-      },
-      {
-        "index": 153285,
-        "CAMERA ID": "CHI025",
-        "Daily Average": 29.941419929958613,
-        "LATITUDE": 41.97588404,
-        "LONGITUDE": -87.704801123,
-        "zip": "60625"
-      },
-      {
-        "index": 156426,
-        "CAMERA ID": "CHI030",
-        "Daily Average": 28.714568226763348,
-        "LATITUDE": 41.803264895,
-        "LONGITUDE": -87.723303509,
-        "zip": "60632"
-      },
-      {
-        "index": 157943,
-        "CAMERA ID": "CHI087",
-        "Daily Average": 28.181379310344827,
-        "LATITUDE": 41.939699007,
-        "LONGITUDE": -87.725074339,
-        "zip": "60641"
-      },
-      {
-        "index": 159393,
-        "CAMERA ID": "CHI076",
-        "Daily Average": 27.751981505944517,
-        "LATITUDE": 41.884514197,
-        "LONGITUDE": -87.667042094,
-        "zip": "60612"
-      },
-      {
-        "index": 162421,
-        "CAMERA ID": "CHI008",
-        "Daily Average": 27.362327718223582,
-        "LATITUDE": 41.877070828,
-        "LONGITUDE": -87.718168316,
-        "zip": "60624"
-      },
-      {
-        "index": 165686,
-        "CAMERA ID": "CHI023",
-        "Daily Average": 27.354817708333332,
-        "LATITUDE": 41.691025456,
-        "LONGITUDE": -87.66424769,
-        "zip": "60643"
-      },
-      {
-        "index": 167222,
-        "CAMERA ID": "CHI101",
-        "Daily Average": 27.25752183759301,
-        "LATITUDE": 41.760005505,
-        "LONGITUDE": -87.576312983,
-        "zip": "60649"
-      },
-      {
-        "index": 170313,
-        "CAMERA ID": "CHI107",
-        "Daily Average": 27.208062418725618,
-        "LATITUDE": 41.89522799,
-        "LONGITUDE": -87.727715334,
-        "zip": "60651"
-      },
-      {
-        "index": 171851,
-        "CAMERA ID": "CHI172",
-        "Daily Average": 26.275659824046922,
-        "LATITUDE": 41.938805468,
-        "LONGITUDE": -87.668778779,
-        "zip": "60657"
-      },
-      {
-        "index": 173215,
-        "CAMERA ID": "CHI122",
-        "Daily Average": 26.195249845774214,
-        "LATITUDE": 41.877242774,
-        "LONGITUDE": -87.702952689,
-        "zip": "60612"
-      },
-      {
-        "index": 176457,
-        "CAMERA ID": "CHI125",
-        "Daily Average": 26.064234487059558,
-        "LATITUDE": 41.890122353,
-        "LONGITUDE": -87.620461395,
-        "zip": "60601"
-      },
-      {
-        "index": 179664,
-        "CAMERA ID": "CHI128",
-        "Daily Average": 25.525527569775356,
-        "LATITUDE": 41.903817103,
-        "LONGITUDE": -87.687194998,
-        "zip": "60622"
-      },
-      {
-        "index": 181133,
-        "CAMERA ID": "CHI157",
-        "Daily Average": 25.410756972111553,
-        "LATITUDE": 41.913374831,
-        "LONGITUDE": -87.7265886,
-        "zip": "60651"
-      },
-      {
-        "index": 183643,
-        "CAMERA ID": "CHI159",
-        "Daily Average": 24.519261637239165,
-        "LATITUDE": 41.909745674,
-        "LONGITUDE": -87.728563295,
-        "zip": "60651"
-      },
-      {
-        "index": 186135,
-        "CAMERA ID": "CHI163",
-        "Daily Average": 24.391464311994113,
-        "LATITUDE": 41.867602722,
-        "LONGITUDE": -87.725382743,
-        "zip": "60624"
-      },
-      {
-        "index": 187494,
-        "CAMERA ID": "CHI048",
-        "Daily Average": 24.333750782717594,
-        "LATITUDE": 41.691202396,
-        "LONGITUDE": -87.717211399,
-        "zip": "60655"
-      },
-      {
-        "index": 189091,
-        "CAMERA ID": "CHI134",
-        "Daily Average": 24.20980926430518,
-        "LATITUDE": 41.853384939,
-        "LONGITUDE": -87.685529682,
-        "zip": "60608"
-      },
-      {
-        "index": 190559,
-        "CAMERA ID": "CHI114",
-        "Daily Average": 23.58670322138451,
-        "LATITUDE": 41.992090875,
-        "LONGITUDE": -87.74818249,
-        "zip": "60646"
-      },
-      {
-        "index": 192018,
-        "CAMERA ID": "CHI071",
-        "Daily Average": 23.19105431309904,
-        "LATITUDE": 41.75038453,
-        "LONGITUDE": -87.721794539,
-        "zip": "60652"
-      },
-      {
-        "index": 193583,
-        "CAMERA ID": "CHI123",
-        "Daily Average": 23.181220657276995,
-        "LATITUDE": 41.876598942,
-        "LONGITUDE": -87.706142679,
-        "zip": "60624"
-      },
-      {
-        "index": 196778,
-        "CAMERA ID": "CHI162",
-        "Daily Average": 22.939661515820458,
-        "LATITUDE": 41.867401835,
-        "LONGITUDE": -87.725083688,
-        "zip": "60624"
-      },
-      {
-        "index": 198137,
-        "CAMERA ID": "CHI075",
-        "Daily Average": 22.91401648998822,
-        "LATITUDE": 41.884517408,
-        "LONGITUDE": -87.666748347,
-        "zip": "60612"
-      },
-      {
-        "index": 200684,
-        "CAMERA ID": "CHI116",
-        "Daily Average": 22.909841706813488,
-        "LATITUDE": 41.990042674,
-        "LONGITUDE": -87.745334319,
-        "zip": "60646"
-      },
-      {
-        "index": 202137,
-        "CAMERA ID": "CHI109",
-        "Daily Average": 22.62671905697446,
-        "LATITUDE": 41.894503309,
-        "LONGITUDE": -87.726204522,
-        "zip": "60651"
-      },
-      {
-        "index": 203664,
-        "CAMERA ID": "CHI041",
-        "Daily Average": 22.539135879774577,
-        "LATITUDE": 41.923897472,
-        "LONGITUDE": -87.763905578,
-        "zip": "60639"
-      },
-      {
-        "index": 205261,
-        "CAMERA ID": "CHI055",
-        "Daily Average": 22.412832929782084,
-        "LATITUDE": 41.962313789,
-        "LONGITUDE": -87.688564554,
-        "zip": "60625"
-      },
-      {
-        "index": 208565,
-        "CAMERA ID": "CHI090",
-        "Daily Average": 21.759666666666668,
-        "LATITUDE": 41.926153343,
-        "LONGITUDE": -87.670938087,
-        "zip": "60614"
-      },
-      {
-        "index": 211565,
-        "CAMERA ID": "CHI036",
-        "Daily Average": 21.72352587244284,
-        "LATITUDE": 41.721878498,
-        "LONGITUDE": -87.621354328,
-        "zip": "60619"
-      },
-      {
-        "index": 214889,
-        "CAMERA ID": "CHI015",
-        "Daily Average": 20.42049576783555,
-        "LATITUDE": 41.764390957,
-        "LONGITUDE": -87.70972842,
-        "zip": "60652"
-      },
-      {
-        "index": 218197,
-        "CAMERA ID": "CHI135",
-        "Daily Average": 20.036526533425224,
-        "LATITUDE": 41.853572622,
-        "LONGITUDE": -87.685827855,
-        "zip": "60608"
-      },
-      {
-        "index": 219648,
-        "CAMERA ID": "CHI043",
-        "Daily Average": 19.85502776064158,
-        "LATITUDE": 41.918231266,
-        "LONGITUDE": -87.762337058,
-        "zip": "60639"
-      },
-      {
-        "index": 221269,
-        "CAMERA ID": "CHI042",
-        "Daily Average": 19.64203084832905,
-        "LATITUDE": 41.924128491,
-        "LONGITUDE": -87.762993999,
-        "zip": "60639"
-      },
-      {
-        "index": 222825,
-        "CAMERA ID": "CHI195",
-        "Daily Average": 19.567164179104477,
-        "LATITUDE": 41.859155558,
-        "LONGITUDE": -87.708596046,
-        "zip": "60623"
-      },
-      {
-        "index": 222959,
-        "CAMERA ID": "CHI070",
-        "Daily Average": 18.9492600422833,
-        "LATITUDE": 41.793702249,
-        "LONGITUDE": -87.687244272,
-        "zip": "60636"
-      },
-      {
-        "index": 226270,
-        "CAMERA ID": "CHI059",
-        "Daily Average": 18.419354838709676,
-        "LATITUDE": 41.794045046,
-        "LONGITUDE": -87.723036363,
-        "zip": "60629"
-      },
-      {
-        "index": 227324,
-        "CAMERA ID": "CHI141",
-        "Daily Average": 18.371854613233925,
-        "LATITUDE": 41.72304462,
-        "LONGITUDE": -87.537040758,
-        "zip": "60617"
-      },
-      {
-        "index": 230543,
-        "CAMERA ID": "CHI203",
-        "Daily Average": 17.989795918367346,
-        "LATITUDE": 41.794154584,
-        "LONGITUDE": -87.723333213,
-        "zip": "60629"
-      },
-      {
-        "index": 230641,
-        "CAMERA ID": "CHI040",
-        "Daily Average": 17.893690851735016,
-        "LATITUDE": 41.923831699,
-        "LONGITUDE": -87.782642242,
-        "zip": "60639"
-      },
-      {
-        "index": 233811,
-        "CAMERA ID": "CHI005",
-        "Daily Average": 16.71544471153846,
-        "LATITUDE": 41.823188825,
-        "LONGITUDE": -87.677348795,
-        "zip": "60609"
-      },
-      {
-        "index": 237139,
-        "CAMERA ID": "CHI094",
-        "Daily Average": 16.70351145038168,
-        "LATITUDE": 41.96242185,
-        "LONGITUDE": -87.688862275,
-        "zip": "60625"
-      },
-      {
-        "index": 240414,
-        "CAMERA ID": "CHI154",
-        "Daily Average": 16.646724598930483,
-        "LATITUDE": 41.706487201,
-        "LONGITUDE": -87.682391059,
-        "zip": "60643"
-      },
-      {
-        "index": 243406,
-        "CAMERA ID": "CHI199",
-        "Daily Average": 15.950819672131148,
-        "LATITUDE": 41.749511105,
-        "LONGITUDE": -87.731155693,
-        "zip": "60652"
-      },
-      {
-        "index": 243528,
-        "CAMERA ID": "CHI039",
-        "Daily Average": 15.60574494949495,
-        "LATITUDE": 41.923614583,
-        "LONGITUDE": -87.78247949,
-        "zip": "60639"
-      },
-      {
-        "index": 246696,
-        "CAMERA ID": "CHI057",
-        "Daily Average": 15.23813841039589,
-        "LATITUDE": 41.87332924,
-        "LONGITUDE": -87.764460415,
-        "zip": "60644"
-      },
-      {
-        "index": 250005,
-        "CAMERA ID": "CHI092",
-        "Daily Average": 14.441505595116988,
-        "LATITUDE": 41.926207903,
-        "LONGITUDE": -87.668328977,
-        "zip": "60614"
-      },
-      {
-        "index": 252954,
-        "CAMERA ID": "CHI022",
-        "Daily Average": 14.042395693135935,
-        "LATITUDE": 41.690701951,
-        "LONGITUDE": -87.664122385,
-        "zip": "60643"
-      },
-      {
-        "index": 254440,
-        "CAMERA ID": "CHI176",
-        "Daily Average": 13.89281767955801,
-        "LATITUDE": 41.945129354,
-        "LONGITUDE": -87.826951699,
-        "zip": "60634"
-      },
-      {
-        "index": 256250,
-        "CAMERA ID": "CHI129",
-        "Daily Average": 13.11424638678596,
-        "LATITUDE": 41.902929409,
-        "LONGITUDE": -87.68576188,
-        "zip": "60622"
-      },
-      {
-        "index": 257703,
-        "CAMERA ID": "CHI074",
-        "Daily Average": 12.898782831518258,
-        "LATITUDE": 41.749715177,
-        "LONGITUDE": -87.719598779,
-        "zip": "60652"
-      },
-      {
-        "index": 259264,
-        "CAMERA ID": "CHI113",
-        "Daily Average": 12.860027855153204,
-        "LATITUDE": 41.911792045,
-        "LONGITUDE": -87.667870459,
-        "zip": "60622"
-      },
-      {
-        "index": 260700,
-        "CAMERA ID": "CHI124",
-        "Daily Average": 12.482747500806191,
-        "LATITUDE": 41.890037755,
-        "LONGITUDE": -87.620179034,
-        "zip": "60601"
-      },
-      {
-        "index": 263801,
-        "CAMERA ID": "CHI126",
-        "Daily Average": 12.281775868242034,
-        "LATITUDE": 41.891134484,
-        "LONGITUDE": -87.61908944,
-        "zip": "60601"
-      },
-      {
-        "index": 265475,
-        "CAMERA ID": "CHI126",
-        "Daily Average": 12.281775868242034,
-        "LATITUDE": 41.890910096,
-        "LONGITUDE": -87.619347521,
-        "zip": "60601"
-      },
-      {
-        "index": 266594,
-        "CAMERA ID": "CHI178",
-        "Daily Average": 12.277310924369749,
-        "LATITUDE": 41.807658499,
-        "LONGITUDE": -87.731755331,
-        "zip": "60632"
-      },
-      {
-        "index": 267308,
-        "CAMERA ID": "CHI118",
-        "Daily Average": 12.250404923874312,
-        "LATITUDE": 41.795332775,
-        "LONGITUDE": -87.655040979,
-        "zip": "60636"
-      },
-      {
-        "index": 270395,
-        "CAMERA ID": "CHI188",
-        "Daily Average": 12.23076923076923,
-        "LATITUDE": 41.945510066,
-        "LONGITUDE": -87.799986233,
-        "zip": "60634"
-      },
-      {
-        "index": 270413,
-        "CAMERA ID": "CHI188",
-        "Daily Average": 12.23076923076923,
-        "LATITUDE": 41.945293896,
-        "LONGITUDE": -87.799816069,
-        "zip": "60634"
-      },
-      {
-        "index": 270512,
-        "CAMERA ID": "CHI049",
-        "Daily Average": 12.16042944785276,
-        "LATITUDE": 41.955725645,
-        "LONGITUDE": -87.766938123,
-        "zip": "60641"
-      },
-      {
-        "index": 273772,
-        "CAMERA ID": "CHI130",
-        "Daily Average": 11.678319533885311,
-        "LATITUDE": 41.873581418,
-        "LONGITUDE": -87.764761968,
-        "zip": "60644"
-      },
-      {
-        "index": 277033,
-        "CAMERA ID": "CHI086",
-        "Daily Average": 11.674263674614306,
-        "LATITUDE": 41.938988391,
-        "LONGITUDE": -87.743121423,
-        "zip": "60641"
-      },
-      {
-        "index": 279885,
-        "CAMERA ID": "CHI117",
-        "Daily Average": 11.54601797334986,
-        "LATITUDE": 41.840812626,
-        "LONGITUDE": -87.64649261,
-        "zip": "60616"
-      },
-      {
-        "index": 283112,
-        "CAMERA ID": "CHI035",
-        "Daily Average": 10.997138314785374,
-        "LATITUDE": 41.721657133,
-        "LONGITUDE": -87.621462899,
-        "zip": "60619"
-      },
-      {
-        "index": 286257,
-        "CAMERA ID": "CHI179",
-        "Daily Average": 10.386396526772794,
-        "LATITUDE": 41.80789596,
-        "LONGITUDE": -87.73027571,
-        "zip": "60632"
-      },
-      {
-        "index": 286948,
-        "CAMERA ID": "CHI088",
-        "Daily Average": 10.13651647612643,
-        "LATITUDE": 41.939040256,
-        "LONGITUDE": -87.722645911,
-        "zip": "60618"
-      },
-      {
-        "index": 288435,
-        "CAMERA ID": "CHI133",
-        "Daily Average": 9.938083121289228,
-        "LATITUDE": 41.896574581,
-        "LONGITUDE": -87.627695378,
-        "zip": "60601"
-      },
-      {
-        "index": 288443,
-        "CAMERA ID": "CHI133",
-        "Daily Average": 9.938083121289228,
-        "LATITUDE": 41.896556107,
-        "LONGITUDE": -87.629025904,
-        "zip": "60601"
-      },
-      {
-        "index": 289614,
-        "CAMERA ID": "CHI062",
-        "Daily Average": 9.737354085603112,
-        "LATITUDE": 41.793300512,
-        "LONGITUDE": -87.724790362,
-        "zip": "60629"
-      },
-      {
-        "index": 290642,
-        "CAMERA ID": "CHI171",
-        "Daily Average": 9.6669449081803,
-        "LATITUDE": 41.938253306,
-        "LONGITUDE": -87.668463202,
-        "zip": "60657"
-      },
-      {
-        "index": 291840,
-        "CAMERA ID": "CHI072",
-        "Daily Average": 9.53990914990266,
-        "LATITUDE": 41.750546198,
-        "LONGITUDE": -87.722092656,
-        "zip": "60652"
-      },
-      {
-        "index": 293381,
-        "CAMERA ID": "CHI103",
-        "Daily Average": 9.515653775322283,
-        "LATITUDE": 41.96785573,
-        "LONGITUDE": -87.763928644,
-        "zip": "60630"
-      },
-      {
-        "index": 296639,
-        "CAMERA ID": "CHI067",
-        "Daily Average": 8.884256378344741,
-        "LATITUDE": 41.750212593,
-        "LONGITUDE": -87.687421063,
-        "zip": "60652"
-      },
-      {
-        "index": 298246,
-        "CAMERA ID": "CHI060",
-        "Daily Average": 8.299412915851272,
-        "LATITUDE": 41.794154584,
-        "LONGITUDE": -87.723333213,
-        "zip": "60629"
-      },
-      {
-        "index": 299268,
-        "CAMERA ID": "CHI170",
-        "Daily Average": 8.266905071521457,
-        "LATITUDE": 41.742993035,
-        "LONGITUDE": -87.66113776,
-        "zip": "60620"
-      },
-      {
-        "index": 302344,
-        "CAMERA ID": "CHI073",
-        "Daily Average": 7.973484848484849,
-        "LATITUDE": 41.749370908,
-        "LONGITUDE": -87.719104675,
-        "zip": "60652"
-      },
-      {
-        "index": 303928,
-        "CAMERA ID": "CHI175",
-        "Daily Average": 7.545148625911385,
-        "LATITUDE": 41.944873638,
-        "LONGITUDE": -87.828316944,
-        "zip": "60634"
-      },
-      {
-        "index": 305711,
-        "CAMERA ID": "CHI136",
-        "Daily Average": 7.381162619573216,
-        "LATITUDE": 41.756374355,
-        "LONGITUDE": -87.633816585,
-        "zip": "60620"
-      },
-      {
-        "index": 307070,
-        "CAMERA ID": "CHI066",
-        "Daily Average": 7.3386097728836885,
-        "LATITUDE": 41.74985294,
-        "LONGITUDE": -87.687983475,
-        "zip": "60652"
-      },
-      {
-        "index": 308523,
-        "CAMERA ID": "CHI164",
-        "Daily Average": 6.575974542561655,
-        "LATITUDE": 41.792519997,
-        "LONGITUDE": -87.703676403,
-        "zip": "60629"
-      },
-      {
-        "index": 309780,
-        "CAMERA ID": "CHI140",
-        "Daily Average": 6.56989247311828,
-        "LATITUDE": 41.722818322,
-        "LONGITUDE": -87.537567465,
-        "zip": "60617"
-      },
-      {
-        "index": 312849,
-        "CAMERA ID": "CHI165",
-        "Daily Average": 5.751827626010003,
-        "LATITUDE": 41.706267661,
-        "LONGITUDE": -87.682391472,
-        "zip": "60643"
-      },
-      {
-        "index": 315448,
-        "CAMERA ID": "CHI177",
-        "Daily Average": 5.533564814814815,
-        "LATITUDE": 41.931705097,
-        "LONGITUDE": -87.724989739,
-        "zip": "60647"
-      },
-      {
-        "index": 317176,
-        "CAMERA ID": "CHI196",
-        "Daily Average": 5.1940298507462686,
-        "LATITUDE": 41.829702286,
-        "LONGITUDE": -87.641352708,
-        "zip": "60616"
-      },
-      {
-        "index": 317243,
-        "CAMERA ID": "CHI137",
-        "Daily Average": 4.800328677074774,
-        "LATITUDE": 41.756158269,
-        "LONGITUDE": -87.633586263,
-        "zip": "60620"
-      },
-      {
-        "index": 318460,
-        "CAMERA ID": "CHI106",
-        "Daily Average": 4.4790844514601424,
-        "LATITUDE": 41.938377159,
-        "LONGITUDE": -87.789118713,
-        "zip": "60634"
-      },
-      {
-        "index": 319727,
-        "CAMERA ID": "CHI056",
-        "Daily Average": 4.4349401957230885,
-        "LATITUDE": 41.96226556,
-        "LONGITUDE": -87.684566996,
-        "zip": "60625"
-      },
-      {
-        "index": 322486,
-        "CAMERA ID": "CHI132",
-        "Daily Average": 4.258196721311475,
-        "LATITUDE": 41.93700435,
-        "LONGITUDE": -87.786036722,
-        "zip": "60634"
-      },
-      {
-        "index": 323706,
-        "CAMERA ID": "CHI110",
-        "Daily Average": 4.236037934668071,
-        "LATITUDE": 41.851929523,
-        "LONGITUDE": -87.684647663,
-        "zip": "60608"
-      },
-      {
-        "index": 324655,
-        "CAMERA ID": "CHI096",
-        "Daily Average": 4.079024034959942,
-        "LATITUDE": 41.962596549,
-        "LONGITUDE": -87.655517675,
-        "zip": "60613"
-      },
-      {
-        "index": 327401,
-        "CAMERA ID": "CHI139",
-        "Daily Average": 3.706046511627907,
-        "LATITUDE": 41.896779127,
-        "LONGITUDE": -87.628781249,
-        "zip": "60601"
-      },
-      {
-        "index": 328476,
-        "CAMERA ID": "CHI089",
-        "Daily Average": 3.513217866909754,
-        "LATITUDE": 41.939258231,
-        "LONGITUDE": -87.722781428,
-        "zip": "60618"
-      },
-      {
-        "index": 329573,
-        "CAMERA ID": "CHI099",
-        "Daily Average": 3.4541284403669725,
-        "LATITUDE": 41.801235748,
-        "LONGITUDE": -87.685895779,
-        "zip": "60632"
-      },
-      {
-        "index": 330663,
-        "CAMERA ID": "CHI167",
-        "Daily Average": 3.405911330049261,
-        "LATITUDE": 41.793614646,
-        "LONGITUDE": -87.704170355,
-        "zip": "60629"
-      },
-      {
-        "index": 331678,
-        "CAMERA ID": "CHI105",
-        "Daily Average": 3.350307287093942,
-        "LATITUDE": 41.938181259,
-        "LONGITUDE": -87.787655485,
-        "zip": "60634"
-      },
-      {
-        "index": 332817,
-        "CAMERA ID": "CHI104",
-        "Daily Average": 3.2181146025878005,
-        "LATITUDE": 41.936950842,
-        "LONGITUDE": -87.785740891,
-        "zip": "60634"
-      },
-      {
-        "index": 333899,
-        "CAMERA ID": "CHI097",
-        "Daily Average": 3.2171306209850106,
-        "LATITUDE": 41.962880635,
-        "LONGITUDE": -87.65602445,
-        "zip": "60613"
-      },
-      {
-        "index": 336234,
-        "CAMERA ID": "CHI078",
-        "Daily Average": 3.0429922613929494,
-        "LATITUDE": 41.961149383,
-        "LONGITUDE": -87.696964034,
-        "zip": "60625"
-      },
-      {
-        "index": 337397,
-        "CAMERA ID": "CHI061",
-        "Daily Average": 2.7087087087087087,
-        "LATITUDE": 41.793079668,
-        "LONGITUDE": -87.724956656,
-        "zip": "60629"
-      },
-      {
-        "index": 338063,
-        "CAMERA ID": "CHI111",
-        "Daily Average": 2.6449553001277137,
-        "LATITUDE": 41.852153505,
-        "LONGITUDE": -87.684338389,
-        "zip": "60608"
-      },
-      {
-        "index": 338846,
-        "CAMERA ID": "CHI098",
-        "Daily Average": 2.597457627118644,
-        "LATITUDE": 41.801012881,
-        "LONGITUDE": -87.686070605,
-        "zip": "60632"
-      },
-      {
-        "index": 339790,
-        "CAMERA ID": "CHI166",
-        "Daily Average": 2.3474945533769063,
-        "LATITUDE": 41.793392372,
-        "LONGITUDE": -87.704348421,
-        "zip": "60629"
-      },
-      {
-        "index": 340708,
-        "CAMERA ID": "CHI131",
-        "Daily Average": 1.3202247191011236,
-        "LATITUDE": 41.895779025,
-        "LONGITUDE": -87.628925203,
-        "zip": "60601"
       }
     ],
     "data-2879a800563f68897ea9039d9533ed32": [
