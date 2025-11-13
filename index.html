@@ -1,331 +1,447 @@
-<html><head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Caroline Williams">
-    <!-- <meta name="keywords" content="GIS, Portfolio, Remote Sensing"> -->
-    <meta name="description" content="Welcome to my portfolio! I enjoy all things GIS, remote sensing, and earth science. This portfolio features my professional work and experiences.">
-    <title>Caroline Williams | GIS Portfolio</title>
-    <link rel="icon" href="">
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  </head>
-    <!--- Navigation Bar --->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional Portfolio">
+    <title>Your Name | Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --accent-green: #10B981;
+            --accent-blue: #3B82F6;
+            --accent-coral: #F97316;
+            --pure-black: #000000;
+            --dark-gray: #1a1a1a;
+            --medium-gray: #2a2a2a;
+            --white: #ffffff;
+            --off-white: #e5e5e5;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--white);
+            background-color: var(--pure-black);
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--pure-black);
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid var(--dark-gray);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav a {
+            color: var(--off-white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        nav a:hover {
+            color: var(--accent-green);
+            background-color: var(--dark-gray);
+        }
+
+        /* Header Section */
+        .header-section {
+            background-color: var(--pure-black);
+            color: var(--white);
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .header-section h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            font-weight: 900;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            color: var(--white);
+        }
+
+        .header-section p {
+            font-size: 1.5rem;
+            font-weight: 400;
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--off-white);
+        }
+
+        /* About Me Section */
+        .about-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 4rem;
+            align-items: center;
+            background-color: var(--pure-black);
+        }
+
+        .photo-container {
+            width: 100%;
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            aspect-ratio: 1;
+            background: var(--dark-gray);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-green);
+            font-style: italic;
+            border: 4px solid var(--accent-green);
+            font-weight: 600;
+            font-size: 1rem;
+            text-align: center;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .photo-placeholder:hover {
+            transform: scale(1.02);
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+        }
+
+        .about-content {
+            background-color: var(--dark-gray);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid var(--medium-gray);
+        }
+
+        .about-content h2 {
+            color: var(--white);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .about-content h2::before {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent-green);
+            margin-bottom: 1rem;
+            border-radius: 2px;
+        }
+
+        .about-content p {
+            margin-bottom: 1.2rem;
+            line-height: 1.8;
+            font-size: 1.05rem;
+            color: var(--off-white);
+        }
+
+        /* Maps Section */
+        .maps-section {
+            background-color: var(--pure-black);
+            padding: 5rem 2rem;
+        }
+
+        .maps-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .maps-container h2 {
+            color: var(--white);
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .maps-container h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent-coral);
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        .map-item {
+            background-color: var(--dark-gray);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid var(--medium-gray);
+            transition: all 0.3s ease;
+        }
+
+        .map-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-coral);
+        }
+
+        .map-item h3 {
+            color: var(--accent-coral);
+            margin-bottom: 1rem;
+            font-size: 1.6rem;
+            font-weight: 800;
+        }
+
+        .map-item p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--off-white);
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 500px;
+            background: var(--medium-gray);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--off-white);
+            font-style: italic;
+            border: 2px dashed #404040;
+            margin-top: 1.5rem;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-gray);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--medium-gray);
+        }
+
+        footer h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        footer p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--off-white);
+        }
+
+        .contact-links {
+            margin: 2rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .contact-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            background-color: var(--accent-green);
+            transition: all 0.3s ease;
+        }
+
+        .contact-links a:hover {
+            background-color: var(--accent-blue);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .about-section {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                padding: 3rem 1.5rem;
+            }
+
+            .photo-container {
+                max-width: 250px;
+                margin: 0 auto;
+            }
+
+            .header-section h1 {
+                font-size: 2.5rem;
+            }
+
+            .header-section p {
+                font-size: 1.2rem;
+            }
+
+            .maps-container h2 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
+
+            .map-placeholder {
+                height: 400px;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-content {
+                padding: 2rem;
+            }
+
+            .map-item {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
 <body>
-  <nav>
-    <div class="navbar" id="mynavbar">
-      <a href="index.html" class="active">HOME</a>
-      <a href="about.html">ABOUT ME</a>
-      <a href="resume.html">RESUME</a>
-      <a href="portfolio.html">PORTFOLIO</a>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <i class="fa fa-bars"></i>
-      </a>
-    </div>
-  </nav>
-  <!--- Section 1: Home Page and Call to Action --->
-  <div style="background-color: var(--main)">
-  <div style="max-width: 1600px; margin: 0 auto !important; float: none !important;">
-  <div class="homepage">
-  <div class="homepage_container">
-    <div class="homepage_left">
-      <div class="homepage_text_cont">
-        <h1 style="opacity: 100%;">Caroline Williams</h1>
-        <div class="homepage_text">
-          <p>Hello! Welcome to my portfolio. I recently graduated with my M.S. in Geographic Information Science and I enjoy all things <b>GIS</b>, <b>remote sensing</b>, and <b>earth science</b>. This portfolio features my professional work and experiences.</p>
-        </div>
-        <a href="portfolio.html" class="button">Recent Work</a>
-      </div>
-    </div>
-    <div class="homepage_right">
-        <img src="styles/images/web_image_background-small.jpg" class="homepage_image">
-    </div>
-  </div>
-  </div>
-</div>
-</div>
-  <!--- Section 2: Brief About Me with Picture --->
-  <!-- Desktop -->
-      <div class="grid_background_col">
-          <div class="desktop">
-    <div class="about_cont">
-      <div class="about-left">
-      <img src="images/headshot_crop.jpg" class="about-image">
-        <!-- <div class="border-line"></div> -->
-      </div>
-      <div class="about-right">
-        <div class="aboutpag1-text">
-        <h1 style="color: var(--accent2); text-align: left;">ABOUT ME</h1><br>
-        <p style="max-width: 500px;">Hi! My name is Caroline Williams, and I am a GIS and Remote Sensing Analyst currently working as Physical Climate Risk Research Assistant at Woodwell Climate Research Center. I enjoy all things relating to environmental science and using technology to better understand our planet.</p>
-        </div>
-        <div class="button_buffer" style="float: left;">
-          <a class="button_blk" href="about.html">More About Me</a>
-        </div>
-      </div>
-    </div>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#maps">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    </div>
-  <!-- Tablet & Mobile-->
-  <div class="tablet_device_1000px">
-    <div class="about_tablet_cont">
-      <div class="about-tablet-left">
-      <img src="images/headshot.jpg" class="about-tablet-image">
-        <!-- <div class="border-line"></div> -->
-      </div>
-      <div class="about-tablet-right">
-        <div class="about-tablet-text">
-        <h1 style="color: var(--accent2);">ABOUT ME</h1><br>
-        <p style="font-size: 20px;">Hi! My name is Caroline Williams, and I am a GIS and Remote Sensing Analyst currently working as Physical Climate Risk Research Assistant at Woodwell Climate Research Center. I enjoy all things relating to environmental science and using technology to better understand our planet.</p>
-        </div>
-        <div class="button_buffer" style="float: left;">
-          <a class="button_blk" href="about.html">More About Me</a>
-        </div>
-      </div>
-    </div>
-  </div>
-    </div>
-  <!-- Section 2: Project Highlight -->
-  <div style="background-color: var(--alternative)">
-  <div style="max-width: 1600px; margin: 0 auto !important; float: none !important;">
-  <div class="grid_background_col2">
-    <div class="grid_title_txt">
-    <h1>HIGHLIGHT</h1>
-    <div class="slideshow-container">
-      <div class="mySlides fade" style="display: block;">
-      <div class="highlight_cont">
-        <div class="numbertext">1 / 4</div>
-        <div class="highlight-left">
-          <div class="highlight-text">
-          <h1 class="highlight-title">NASA Pop-Up Projects</h1>
-          <h3 class="highlight-subtitle" style="font-weight:normal;"><i>Projects I managed in the NASA DEVELOP program as the Fellow for the Pop-Up Project (PUP) Office<p></p></i></h3><br>
-          <p class="highlight-maintext">Through my recent role as Fellow for NASA DEVELOP's Pop-Up Project Locations, I oversaw projects across the United States appling Earth observations to real-world issues. Projects include: UHEAT Urban Development, Mexico Disasters, Maipo River Valley Agriculture, Chesapeake Bay Water Resources, Shoshone River Water Resources I &amp; II, Southeast US Climate, InVEST Urban Development, Kankakee Water Resources, and New York Ecological Conservation.
-          </p></div>
-        </div>
-        <div class="highlight-right">
-        <img src="images/2022Spring_PUP_UHEATUrban_WebsiteImage_crop.png" class="highlight-image">
-        <div class="highlight-bottom-right-txt">Image Credit: NASA DEVELOP</div>
-        </div>
-      </div>
-      <div class="button_buffer">
-        <a class="button_blk" href="projects/NASA-DEVELOP-PUP-Projects.html">More About PUP Projects</a>
-      </div>
-      </div>
-      <div class="mySlides fade" style="display: none;">
-      <div class="highlight_cont">
-        <div class="numbertext">2 / 4</div>
-        <div class="highlight-left">
-          <div class="highlight-text">
-          <h1 class="highlight-title">NASA ARSET Training</h1>
-          <h3 class="highlight-subtitle" style="font-weight:normal;"><i>Monitoring and Modeling Floods using Earth Observations<p></p></i></h3><br>
-          <p class="highlight-maintext">In this NASA Applied Remote Sensing Training (ARSET) webinar, I contributed as a guest speaker providing a case study example of utilizing NASA SERVIR's HYDRAFloods tool in Python to detect flooding. Citation: (2022). ARSET - Monitoring and Modeling Floods using Earth Observations. NASA Applied Remote Sensing Training Program (ARSET).
-          </p></div>
-        </div>
-        <div class="highlight-right">
-        <img src="images/ARSET_Monitoring_Floods_Training.jpg" class="highlight-image">
-        <div class="highlight-bottom-right-txt">Image Credit: NASA ARSET</div>
-        </div>
-      </div>
-      <div class="button_buffer">
-        <a class="button_blk" href="http://appliedsciences.nasa.gov/join-mission/training/english/arset-monitoring-and-modeling-floods-using-earth-observations">More About ARSET Training</a>
-      </div>
-      </div>
-    <div class="mySlides fade" style="display: none;">
-    <div class="highlight_cont">
-      <div class="numbertext">3 / 4</div>
-      <div class="highlight-left">
-        <div class="highlight-text">
-        <h1 class="highlight-title">Central America Disasters</h1>
-        <h3 class="highlight-subtitle" style="font-weight:normal;"><i>Using Earth Observations to Map Flooding for Disaster Monitoring, Inform Potential Risk, and Prepare for Possible Response</i></h3><br>
-        <p class="highlight-maintext">This NASA DEVELOP Fall 2021 project, generated flood extent maps for Hurricanes Eta and Iota, produced hsitorical surface water maps, and examined precipitation trends during the two case study events. This analysis was conducted using NASA SERVIR's HYDRAFloods tool using Google Colab and the Google Earth Engine Python API.</p>
-        </div>
-      </div>
-      <div class="highlight-right">
-      <img src="images/2021Fall_MSFC_CentralAmericaDisasters_WebsiteImage_mycopy.jpg" class="highlight-image">
-      <div class="highlight-bottom-right-txt">Image Credit: NASA DEVELOP</div>
-      </div>
-    </div>
-    <div class="button_buffer">
-      <a class="button_blk" href="projects/NASA-DEVELOP-CentralAmericaDisasters.html">More About Central America Disasters</a>
-    </div>
-    </div>
-    <div class="mySlides fade" style="display: none;">
-    <div class="highlight_cont">
-    <div class="numbertext">4 / 4</div>
-      <div class="highlight-left">
-        <div class="highlight-text">
-        <h1 class="highlight-title">Argentina Agriculture</h1>
-        <h3 class="highlight-subtitle" style="font-weight:normal;"><i>Crop Monitoring and Forecasting for Argentina using NASA Satellite Observations</i></h3><br>
-        <p class="highlight-maintext">This NASA DEVELOP Summer 2021 project, utilized the Google Earth Engine JavaScript API to create a crop monitoring forecasting tool in Argentina. These scripts utilize Terra MODIS NDVI imagery to forecast NDVI from weeks to several months. This forecasted NDVI is then used to calculate predicted crop yield for the area of interest. Supplementary to the forecasting model, the tool also looks at climate and environmental trends in the study area like soil moisture, temperature, and precipitation.</p>
-        </div>
-      </div>
-      <div class="highlight-right">
-      <img src="images/2021Sum_GSFC_ArgentinaAg_WebsiteImage.jpg" class="highlight-image">
-      <div class="highlight-bottom-right-txt">Image Credit: NASA DEVELOP</div>
-    </div>
-    </div>
-    <div class="button_buffer">
-      <a class="button_blk" href="projects/NASA-DEVELOP-ArgentinaAg.html">More About Argentina Agriculture</a>
-    </div>
-    </div>
-    <a class="prev" onclick="plusSlides(-1)">❮</a>
-    <a class="next" onclick="plusSlides(1)">❯</a>
-    </div>
-    <div style="text-align:center">
-      <span class="dot activehover" onclick="currentSlide(1)"></span>
-      <span class="dot" onclick="currentSlide(2)"></span>
-      <span class="dot" onclick="currentSlide(3)"></span>
-      <span class="dot" onclick="currentSlide(4)"></span>
-    </div>
-    </div>
-  </div>
-  </div>
-  </div>
-  <!--- Section 3: Recent Work in Grid format --->
-  <div class="grid_background_col">
-  <div class="port_cont">
-    <div class="port-left">
-    <div class="grid_title_txt"></div>
-      <div class="homepage_sect2_cont">
-      <div class="row">
-      <!-- <div class="column">
-        <a href="projects/NASA-DEVELOP-PUP-Projects.html" target="">
-          <div class="container">
-            <img data-src="./images/2022Spring_PUP_UHEATUrban_WebsiteImage_v2.png" class="image">
-            <div class="overlay">
-              <div class="grid_text">NASA DEVELOP PUP Projects</div>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="column">
-        <a href="projects/NASA-DEVELOP-CentralAmericaDisasters.html" target="">
-          <div class="container">
-            <img data-src="./images/2021Fall_MSFC_CentralAmericaDisasters_WebsiteImage_mycopy.jpg" class="image">
-            <div class="overlay">
-              <div class="grid_text">NASA DEVELOP Central America Disasters</div>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="column">
-        <a href="projects/NASA-DEVELOP-ArgentinaAg.html" target="">
-          <div class="container">
-            <img data-src="./images/2021Sum_GSFC_ArgentinaAg_WebsiteImage.jpg" class="image">
-            <div class="overlay">
-              <div class="grid_text">NASA DEVELOP Argentina Agriculture</div>
-            </div>
-          </div>
-        </a>
-      </div> -->
-      <div class="column">
-        <a href="projects/Mapping-Burn-Scars-using-GEE.html" target="">
-          <div class="container">
-            <img data-src="./images/wildfire_project_crop.jpg" class="image" src="./images/wildfire_project_crop.jpg">
-            <div class="overlay">
-              <div class="grid_text">Mapping Burn Scars using Google Earth Engine JavaScript API</div>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="column">
-        <a href="projects/USAID-Web-Mapping-Course-Project.html" target="">
-          <div class="container">
-            <img data-src="./images/WM_layer_crop.jpg" class="image" src="./images/WM_layer_crop.jpg">
-            <div class="overlay">
-              <div class="grid_text">Web Mapping Final Project USAID Prototype</div>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="column">
-        <a href="projects/WCS-Environmental-Trends-Analysis.html" target="">
-          <div class="container">
-            <img data-src="./images/wcs_project_image_crop.jpg" class="image" src="./images/wcs_project_image_crop.jpg">
-            <div class="overlay">
-              <div class="grid_text">WCS Environmental Trends Analysis Ruaha &amp; Katavi National Parks</div>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="column">
-        <a href="projects/Vulnerability-Populations-in-Vietnam-to-Tropical-Cyclones.html" target="">
-          <div class="container">
-            <img data-src="./images/vulnerability_project_image_v2_crop.jpg" class="image" src="./images/vulnerability_project_image_v2_crop.jpg">
-            <div class="overlay">
-              <div class="grid_text">Vulnerability of Populations in Vietnam to Tropical Cyclones</div>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="column">
-        <a href="projects/SDM_Eastern_Hemlock_Web_Application.html" target="">
-          <div class="container">
-            <img data-src="./images/SDM2_layer_crop.jpg" class="image" src="./images/SDM2_layer_crop.jpg">
-            <div class="overlay">
-              <div class="grid_text">Eastern Hemlock Species Distribution Model Web Map</div>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="column">
-        <a href="projects/Electric_Vehicle_Spatial_Analysis.html" target="">
-          <div class="container">
-            <img data-src="./images/ny_fig2_crop.jpg" class="image" src="./images/ny_fig2_crop.jpg">
-            <div class="overlay">
-              <div class="grid_text">Electric Vehicle Spatial Analysis with R</div>
-            </div>
-          </div>
-        </a>
-      </div>
-      </div>
-    </div>
-  </div>
-  <div class="port-right">
-    <h1 style="color: var(--accent2);">LATEST WORK</h1>
-      <p>Check out my latest work in remote sensing, GIS, and interactive web mapping!</p>
-    <div class="button_buffer">
-      <a href="portfolio.html" class="button_blk">More Projects</a>
-    </div>
-  </div>
-  </div>
-  </div>
-  <!-- Section: Experience -->
-  <!-- <div class="grid_background_col2" style="padding:0%;">
-    <div class="exp_cont">
-    <div class="exp-left">
-  <iframe class="resume_map" src="experiences.html"></iframe>
-    </div>
-    <div class="exp-right" style="margin:2.5%;">
-      <h1 style="color: var(--accent2);">MY EXPERIENCES</h1>
-    </div>
-    </div>
-  </div> -->
-  <!--- Section 4: Contact Information --->
-  <div class="about_me_interests_cont_pg2">
-    <div class="about_me_interests_pg2">
-      <br>
-      <h2 style="font-family: 'Montserrat', sans-serif;">Contact</h2>
-      <br>
-      <p>Please feel free to contact me at my email address or through my LinkedIn Account below.</p>
-      <br>
-      <h2 style="font-family: 'Montserrat', sans-serif;">Email</h2>
-      <br>
-      <p>cawilliams719@gmail.com</p>
-      <br>
-    </div>
-  </div>
-  <!--- Footer --->
-  <div class="top_footer">
-    <p style="font-size: 24px; font-family: 'Montserrat', sans-serif;">Contact Me</p>
-    <a href="https://www.linkedin.com/in/caroline-ann-williams/"><i class="fa fa-linkedin"></i></a>
-    <a href="https://github.com/cawilliams719"><i class="fa fa-github"></i></a>
-  </div>
-  <div class="bottom_footer">
-    <p><small>© Copyright 2023, Caroline Williams</small></p>
-  </div>
-  <script src="scripts/icon.js"></script>
-  <script src="scripts/scroll.js"></script>
-  <script src="scripts/slider.js"></script>
-  <script src="scripts/lazy-load.js"></script>
-  
+    <!-- Header Section -->
+    <section id="home" class="header-section">
+        <h1>Your Name</h1>
+        <p>Your Professional Title or Tagline</p>
+    </section>
 
-</body></html>
+    <!-- About Me Section -->
+    <section id="about" class="about-section">
+        <div class="photo-container">
+            <div class="photo-placeholder">
+                Your Photo Here<br>(300x300)
+            </div>
+        </div>
+        <div class="about-content">
+            <h2>About Me</h2>
+            <p>
+                Replace this with your introduction. Tell visitors who you are, what you do, 
+                and what makes you passionate about your work. This is your opportunity to 
+                connect with your audience and share your story.
+            </p>
+            <p>
+                Add more paragraphs here to describe your background, experience, education, 
+                or any other relevant information you'd like to share. Keep it concise and 
+                engaging.
+            </p>
+            <p>
+                You can also mention your specializations, interests, or the types of projects 
+                you work on. Make it personal and authentic.
+            </p>
+        </div>
+    </section>
+
+    <!-- Maps/Projects Section -->
+    <section id="maps" class="maps-section">
+        <div class="maps-container">
+            <h2>Interactive Maps & Projects</h2>
+            
+            <!-- Map Item 1 -->
+            <div class="map-item">
+                <h3>Project Title 1</h3>
+                <p>Brief description of this project or map. Explain what it shows, the tools used, and its significance.</p>
+                <div class="map-placeholder">
+                    Interactive Map 1<br>
+                    (Replace with iframe or map embed code)
+                </div>
+            </div>
+
+            <!-- Map Item 2 -->
+            <div class="map-item">
+                <h3>Project Title 2</h3>
+                <p>Brief description of this project or map. Explain what it shows, the tools used, and its significance.</p>
+                <div class="map-placeholder">
+                    Interactive Map 2<br>
+                    (Replace with iframe or map embed code)
+                </div>
+            </div>
+
+            <!-- Map Item 3 -->
+            <div class="map-item">
+                <h3>Project Title 3</h3>
+                <p>Brief description of this project or map. Explain what it shows, the tools used, and its significance.</p>
+                <div class="map-placeholder">
+                    Interactive Map 3<br>
+                    (Replace with iframe or map embed code)
+                </div>
+            </div>
+
+            <!-- Add more map items as needed -->
+        </div>
+    </section>
+
+    <!-- Footer/Contact Section -->
+    <footer id="contact">
+        <h3>Contact Me</h3>
+        <p>your.email@example.com</p>
+        <div class="contact-links">
+            <a href="#">LinkedIn</a>
+            <a href="#">GitHub</a>
+            <a href="#">Twitter</a>
+        </div>
+        <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.8;">
+            © 2024 Your Name. All rights reserved.
+        </p>
+    </footer>
+</body>
+</html>
