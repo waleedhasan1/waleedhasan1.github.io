@@ -396,12 +396,20 @@
             
             <!-- Map Item 1 -->
             <div class="map-item">
-                <h3>Project Title 1</h3>
-                <p>Brief description of this project or map. Explain what it shows, the tools used, and its significance.</p>
-                <div class="map-placeholder">
-                    Interactive Map 1<br>
-                    (Replace with iframe or map embed code)
-                </div>
+                <h3>NYC Subway Real-Time Tracker</h3>
+                <p>Interactive map displaying real-time train arrivals for all 472 NYC subway stations. Built with Next.js, TypeScript, and MTA's GTFS-RT API.</p>
+                <a href="https://nycbusmap.vercel.app/" target="_blank" style="display: block; position: relative; text-decoration: none;">
+                    <img 
+                        src="nycbusmap.png" 
+                        alt="NYC Subway Tracker Screenshot" 
+                        style="width: 100%; height: 500px; object-fit: cover; border-radius: 15px; border: 2px solid var(--accent-coral); transition: all 0.3s ease; cursor: pointer;"
+                        onmouseover="this.style.opacity='0.7'; this.nextElementSibling.style.opacity='1';"
+                        onmouseout="this.style.opacity='1'; this.nextElementSibling.style.opacity='0';"
+                    >
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(16, 185, 129, 0.95); color: white; padding: 1.5rem 3rem; border-radius: 12px; font-size: 1.5rem; font-weight: 800; opacity: 0; transition: opacity 0.3s ease; pointer-events: none; text-transform: uppercase; letter-spacing: 1px;">
+                        Click to Open →
+                    </div>
+                </a>
             </div>
 
             <!-- Map Item 2 -->
