@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional Portfolio">
-    <title>Waleed Hasan | Portfolio</title>
+    <title>My Portfolio - OS 2000</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&display=swap');
+        
         * {
             margin: 0;
             padding: 0;
@@ -13,441 +14,675 @@
         }
 
         :root {
-            --accent-green: #10B981;
-            --accent-blue: #3B82F6;
-            --accent-coral: #F97316;
-            --pure-black: #000000;
-            --dark-gray: #1a1a1a;
-            --medium-gray: #2a2a2a;
-            --white: #ffffff;
-            --off-white: #e5e5e5;
+            --xp-blue: #0054E3;
+            --xp-light-blue: #3C8CF7;
+            --xp-green: #76B541;
+            --xp-desktop-bg: #5A8FC3;
+            --window-border: #0831D9;
+            --taskbar-blue: #245EDC;
+            --title-bar-start: #0997FF;
+            --title-bar-end: #0053EE;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
-            line-height: 1.6;
-            color: var(--white);
-            background-color: var(--pure-black);
-        }
-
-        /* Navigation */
-        nav {
-            background-color: var(--pure-black);
-            padding: 1.5rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 2px solid var(--dark-gray);
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        nav a {
-            color: var(--off-white);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-        }
-
-        nav a:hover {
-            color: var(--accent-green);
-            background-color: var(--dark-gray);
-        }
-
-        /* Header Section */
-        .header-section {
-            background-color: var(--pure-black);
-            color: var(--white);
-            padding: 6rem 2rem;
-            text-align: center;
-            position: relative;
+            font-family: 'Tahoma', 'MS Sans Serif', sans-serif;
+            background: linear-gradient(180deg, #5A8FC3 0%, #236BC0 100%);
+            height: 100vh;
             overflow: hidden;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M0,0 L0,13 L4,9 L6,14 L8,13 L6,8 L10,8 Z" fill="white" stroke="black"/></svg>'), auto;
         }
 
-        .header-section::before {
-            content: '';
+        .desktop {
+            height: calc(100vh - 40px);
+            padding: 20px;
+            position: relative;
+        }
+
+        .desktop-icon {
+            width: 80px;
+            text-align: center;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: filter 0.1s;
+        }
+
+        .desktop-icon:active {
+            filter: brightness(1.2);
+        }
+
+        .desktop-icon img {
+            width: 48px;
+            height: 48px;
+            image-rendering: pixelated;
+            margin-bottom: 4px;
+            filter: drop-shadow(1px 1px 0px rgba(0,0,0,0.5));
+        }
+
+        .desktop-icon span {
+            display: block;
+            color: white;
+            font-size: 11px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+            padding: 2px 4px;
+            background: rgba(0,0,0,0.1);
+        }
+
+        .desktop-icon.selected span {
+            background: rgba(0, 84, 227, 0.5);
+            outline: 1px dotted white;
+        }
+
+        .window {
             position: absolute;
-            top: 0;
+            min-width: 400px;
+            min-height: 300px;
+            background: #ECE9D8;
+            border: 3px solid;
+            border-color: #0831D9 #0831D9 #042674 #042674;
+            box-shadow: 4px 4px 10px rgba(0,0,0,0.4);
+            display: none;
+            z-index: 1;
+        }
+
+        .window.active {
+            display: block;
+            z-index: 100;
+        }
+
+        .window-title-bar {
+            background: linear-gradient(180deg, var(--title-bar-start) 0%, var(--title-bar-end) 100%);
+            padding: 4px 6px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: move;
+            user-select: none;
+        }
+
+        .window-title {
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .window-title img {
+            width: 16px;
+            height: 16px;
+            image-rendering: pixelated;
+        }
+
+        .window-controls {
+            display: flex;
+            gap: 2px;
+        }
+
+        .window-button {
+            width: 21px;
+            height: 21px;
+            border: 1px solid;
+            border-color: white #003C74 #003C74 white;
+            background: linear-gradient(180deg, #ECE9D8 0%, #C0C7D8 100%);
+            cursor: pointer;
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .window-button:hover {
+            background: linear-gradient(180deg, #FFF 0%, #DCDFE8 100%);
+        }
+
+        .window-button:active {
+            border-color: #003C74 white white #003C74;
+            background: #C0C7D8;
+        }
+
+        .window-button.close {
+            background: linear-gradient(180deg, #F77B7B 0%, #E14B4B 100%);
+            color: white;
+            border-color: #FF9A9A #8B0000 #8B0000 #FF9A9A;
+        }
+
+        .window-content {
+            padding: 16px;
+            height: calc(100% - 33px);
+            overflow-y: auto;
+            background: white;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .window-content h2 {
+            color: var(--xp-blue);
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .window-content h3 {
+            color: var(--xp-green);
+            margin: 16px 0 8px 0;
+            font-size: 15px;
+        }
+
+        .window-content ul {
+            margin-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        .window-content a {
+            color: var(--xp-blue);
+            text-decoration: none;
+        }
+
+        .window-content a:hover {
+            text-decoration: underline;
+        }
+
+        .taskbar {
+            position: fixed;
+            bottom: 0;
             left: 0;
             right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.08) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .header-section h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            font-weight: 900;
-            position: relative;
-            text-transform: uppercase;
-            letter-spacing: -2px;
-            color: var(--white);
-        }
-
-        .header-section p {
-            font-size: 1.5rem;
-            font-weight: 400;
-            position: relative;
-            max-width: 600px;
-            margin: 0 auto;
-            color: var(--off-white);
-        }
-
-        /* About Me Section */
-        .about-section {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 5rem 2rem;
-            display: grid;
-            grid-template-columns: 350px 1fr;
-            gap: 4rem;
-            align-items: center;
-            background-color: var(--pure-black);
-        }
-
-        .photo-container {
-            width: 100%;
-        }
-
-        .photo-placeholder {
-            width: 100%;
-            aspect-ratio: 1;
-            background: var(--dark-gray);
-            border-radius: 50%;
+            height: 40px;
+            background: linear-gradient(180deg, #3C8CF7 0%, #245EDC 100%);
+            border-top: 2px solid #2859C6;
             display: flex;
             align-items: center;
+            padding: 0 4px;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
+        }
+
+        .start-button {
+            height: 32px;
+            padding: 0 12px;
+            background: linear-gradient(180deg, #6EC05F 0%, #3DA335 100%);
+            border: 1px solid;
+            border-color: #76B541 #2D8C25 #2D8C25 #76B541;
+            border-radius: 3px;
+            color: white;
+            font-weight: bold;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .start-button:hover {
+            background: linear-gradient(180deg, #7ED86F 0%, #4AB542 100%);
+        }
+
+        .start-button:active {
+            background: linear-gradient(180deg, #5BA84E 0%, #2D8C25 100%);
+            border-color: #2D8C25 #76B541 #76B541 #2D8C25;
+        }
+
+        .start-icon {
+            width: 24px;
+            height: 24px;
+            image-rendering: pixelated;
+        }
+
+        .taskbar-items {
+            flex: 1;
+            display: flex;
+            gap: 4px;
+            margin-left: 8px;
+        }
+
+        .taskbar-item {
+            height: 28px;
+            padding: 0 12px;
+            background: linear-gradient(180deg, #5C9EE7 0%, #3570C8 100%);
+            border: 1px solid #2859C6;
+            color: white;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            min-width: 150px;
+            max-width: 200px;
+        }
+
+        .taskbar-item:hover {
+            background: linear-gradient(180deg, #6CAEF7 0%, #4580D8 100%);
+        }
+
+        .taskbar-item.active {
+            background: linear-gradient(180deg, #ECE9D8 0%, #C0C7D8 100%);
+            color: black;
+            border-color: #003C74 white white #003C74;
+            box-shadow: inset 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .taskbar-item img {
+            width: 16px;
+            height: 16px;
+            image-rendering: pixelated;
+        }
+
+        .system-tray {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            padding: 0 8px;
+            color: white;
+            font-size: 12px;
+        }
+
+        .loading-screen {
+            position: fixed;
+            inset: 0;
+            background: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             justify-content: center;
-            color: var(--accent-green);
-            font-style: italic;
-            border: 4px solid var(--accent-green);
-            font-weight: 600;
-            font-size: 1rem;
-            text-align: center;
-            padding: 2rem;
-            transition: all 0.3s ease;
+            z-index: 9999;
+            animation: fadeOut 2s 2s forwards;
         }
 
-        .photo-placeholder:hover {
-            transform: scale(1.02);
-            border-color: var(--accent-blue);
-            color: var(--accent-blue);
+        @keyframes fadeOut {
+            to { opacity: 0; pointer-events: none; }
         }
 
-        .about-content {
-            background-color: var(--dark-gray);
-            padding: 3rem;
-            border-radius: 20px;
-            border: 1px solid var(--medium-gray);
+        .loading-logo {
+            font-family: 'Press Start+2P', monospace;
+            font-size: 48px;
+            color: #00FF00;
+            text-shadow: 0 0 20px #00FF00;
+            margin-bottom: 40px;
+            animation: pulse 2s infinite;
         }
 
-        .about-content h2 {
-            color: var(--white);
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: -1px;
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
         }
 
-        .about-content h2::before {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: var(--accent-green);
-            margin-bottom: 1rem;
+        .loading-bar-container {
+            width: 400px;
+            height: 30px;
+            border: 2px solid #00FF00;
+            padding: 4px;
+            background: #001100;
+        }
+
+        .loading-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #00FF00, #00AA00);
+            animation: loading 2s ease-in-out;
+            box-shadow: 0 0 10px #00FF00;
+        }
+
+        @keyframes loading {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+
+        .project-card {
+            border: 2px solid #D4D0C8;
+            padding: 12px;
+            margin-bottom: 12px;
+            background: #F0F0F0;
+            box-shadow: inset -1px -1px 0 #808080, inset 1px 1px 0 white;
+        }
+
+        .project-card h4 {
+            color: var(--xp-blue);
+            margin-bottom: 6px;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: linear-gradient(180deg, #ECE9D8 0%, #C0C7D8 100%);
+            border: 1px solid #003C74;
+            padding: 2px 8px;
+            margin: 2px;
+            font-size: 11px;
             border-radius: 2px;
         }
 
-        .about-content p {
-            margin-bottom: 1.2rem;
-            line-height: 1.8;
-            font-size: 1.05rem;
-            color: var(--off-white);
+        scrollbar {
+            width: 16px;
         }
 
-        /* Maps Section */
-        .maps-section {
-            background-color: var(--pure-black);
-            padding: 5rem 2rem;
+        ::-webkit-scrollbar {
+            width: 16px;
         }
 
-        .maps-container {
-            max-width: 1200px;
-            margin: 0 auto;
+        ::-webkit-scrollbar-track {
+            background: #ECE9D8;
         }
 
-        .maps-container h2 {
-            color: var(--white);
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            text-align: center;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: -1px;
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(90deg, #C0C7D8 0%, #A0A7B8 100%);
+            border: 1px solid #808080;
         }
 
-        .maps-container h2::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: var(--accent-coral);
-            margin: 1rem auto 0;
-            border-radius: 2px;
-        }
-
-        .map-item {
-            background-color: var(--dark-gray);
-            border-radius: 20px;
-            padding: 2.5rem;
-            margin-bottom: 2.5rem;
-            border: 1px solid var(--medium-gray);
-            transition: all 0.3s ease;
-        }
-
-        .map-item:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-coral);
-        }
-
-        .map-item h3 {
-            color: var(--accent-coral);
-            margin-bottom: 1rem;
-            font-size: 1.6rem;
-            font-weight: 800;
-        }
-
-        .map-item p {
-            font-size: 1.05rem;
-            line-height: 1.7;
-            color: var(--off-white);
-        }
-
-        .map-placeholder {
-            width: 100%;
-            height: 500px;
-            background: var(--medium-gray);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--off-white);
-            font-style: italic;
-            border: 2px dashed #404040;
-            margin-top: 1.5rem;
-            font-weight: 500;
-            font-size: 1rem;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--dark-gray);
-            color: var(--white);
-            text-align: center;
-            padding: 3rem 2rem;
-            border-top: 1px solid var(--medium-gray);
-        }
-
-        footer h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            font-weight: 800;
-            color: var(--white);
-        }
-
-        footer p {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            color: var(--off-white);
-        }
-
-        .contact-links {
-            margin: 2rem 0;
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-        }
-
-        .contact-links a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            padding: 0.75rem 2rem;
-            border-radius: 8px;
-            background-color: var(--accent-green);
-            transition: all 0.3s ease;
-        }
-
-        .contact-links a:hover {
-            background-color: var(--accent-blue);
-            transform: translateY(-2px);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .about-section {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-                padding: 3rem 1.5rem;
-            }
-
-            .photo-container {
-                max-width: 250px;
-                margin: 0 auto;
-            }
-
-            .header-section h1 {
-                font-size: 2.5rem;
-            }
-
-            .header-section p {
-                font-size: 1.2rem;
-            }
-
-            .maps-container h2 {
-                font-size: 2rem;
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 1rem;
-                align-items: center;
-            }
-
-            .map-placeholder {
-                height: 400px;
-            }
-
-            .contact-links {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .about-content {
-                padding: 2rem;
-            }
-
-            .map-item {
-                padding: 2rem;
-            }
+        ::-webkit-scrollbar-button {
+            height: 16px;
+            background: linear-gradient(180deg, #ECE9D8 0%, #C0C7D8 100%);
+            border: 1px solid #808080;
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#maps">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <div class="loading-screen">
+        <div class="loading-logo">PORTFOLIO OS</div>
+        <div class="loading-bar-container">
+            <div class="loading-bar"></div>
+        </div>
+    </div>
 
-    <!-- Header Section -->
-    <section id="home" class="header-section">
-        <h1>Waleed Hasan</h1>
-        <p>Your Professional Title or Tagline</p>
-    </section>
+    <div class="desktop" id="desktop">
+        <div class="desktop-icon" data-window="about">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect fill='%234A90E2' width='48' height='48'/%3E%3Cpath fill='%23FFF' d='M24 8c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16zm0 28c-6.6 0-12-5.4-12-12s5.4-12 12-12 12 5.4 12 12-5.4 12-12 12zm-2-18h4v2h-4zm0 4h4v10h-4z'/%3E%3C/svg%3E" alt="About Me">
+            <span>About Me</span>
+        </div>
 
-    <!-- About Me Section -->
-    <section id="about" class="about-section">
-        <div class="photo-container">
-            <div class="photo-placeholder">
-                <img src="profilepic.png" alt="Your Name" style="width: 100%; aspect-ratio: 1; border-radius: 50%; object-fit: cover; border: 4px solid var(--accent-green);">
+        <div class="desktop-icon" data-window="projects">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect fill='%23F39C12' width='48' height='48'/%3E%3Cpath fill='%23FFF' d='M8 8h32v6H8zm0 10h32v22H8z'/%3E%3Cpath fill='%23F39C12' d='M12 22h24v2H12zm0 4h24v2H12zm0 4h18v2H12z'/%3E%3C/svg%3E" alt="Projects">
+            <span>Projects</span>
+        </div>
+
+        <div class="desktop-icon" data-window="skills">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect fill='%2327AE60' width='48' height='48'/%3E%3Cpath fill='%23FFF' d='M12 12h24v4H12zm0 8h24v4H12zm0 8h16v4H12z'/%3E%3Cpath fill='%2327AE60' d='M34 30l6-6-6-6z'/%3E%3C/svg%3E" alt="Skills">
+            <span>Skills</span>
+        </div>
+
+        <div class="desktop-icon" data-window="contact">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect fill='%23E74C3C' width='48' height='48'/%3E%3Cpath fill='%23FFF' d='M8 12h32v24H8zm4 4l12 8 12-8v-2l-12 8-12-8z'/%3E%3C/svg%3E" alt="Contact">
+            <span>Contact</span>
+        </div>
+    </div>
+
+    <!-- Windows -->
+    <div class="window" id="window-about" style="top: 100px; left: 100px; width: 500px;">
+        <div class="window-title-bar">
+            <div class="window-title">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect fill='%234A90E2' width='16' height='16'/%3E%3Cpath fill='%23FFF' d='M8 2c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6zm0 10c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z'/%3E%3C/svg%3E" alt="">
+                About Me
+            </div>
+            <div class="window-controls">
+                <button class="window-button minimize">_</button>
+                <button class="window-button maximize">□</button>
+                <button class="window-button close" onclick="closeWindow('about')">×</button>
             </div>
         </div>
-        <div class="about-content">
-            <h2>About Me</h2>
-            <p>
-                Hi! I'm Waleed, I grew up in the suburbs of Chicago and studied Data Science and Applied Statistics at the University of Illinois Chicago.
-                During my time there, I have fallen in love with exploring the city using the CTA. Public transit systems and maps have always been really cool to me, and 
-                being able to explore a beautiful city on the train is a blessing. 
-            </p>
-            <p>
-                During my time at UIC I have had a lot of fun trying to make tools that map cities and make the transit system more accesible and easier to use.
-                The goal is to make maps that allow easier access to all kinds of city resources that are often underutilized.
-            </p>
-            <p>
-                I also love music! I love busking on the subway when I get a chance, and I love catching a concert when I get a chance. 
-            </p>
-        </div>
-    </section>
-
-    <!-- Maps/Projects Section -->
-    <section id="maps" class="maps-section">
-        <div class="maps-container">
-            <h2>Interactive Maps & Projects</h2>
+        <div class="window-content">
+            <h2>👋 Hey, I'm [Your Name]</h2>
+            <p>Welcome to my retro-styled portfolio! I'm a [your role - developer/designer/etc] passionate about creating unique digital experiences.</p>
             
-            <!-- Map Item 1 -->
-            <div class="map-item">
-                <h3>NYC Subway Real-Time Tracker</h3>
-                <p>Interactive map displaying real-time train arrivals for all 472 NYC subway stations. Built with Next.js, TypeScript, and MTA's GTFS-RT API.</p>
-                <a href="https://nycbusmap.vercel.app/" target="_blank" style="display: block; position: relative; text-decoration: none;">
-                    <img 
-                        src="nycbusmap.png" 
-                        alt="NYC Subway Tracker Screenshot" 
-                        style="width: 100%; height: 500px; object-fit: cover; border-radius: 15px; border: 2px solid var(--accent-coral); transition: all 0.3s ease; cursor: pointer;"
-                        onmouseover="this.style.opacity='0.7'; this.nextElementSibling.style.opacity='1';"
-                        onmouseout="this.style.opacity='1'; this.nextElementSibling.style.opacity='0';"
-                    >
-                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(16, 185, 129, 0.95); color: white; padding: 1.5rem 3rem; border-radius: 12px; font-size: 1.5rem; font-weight: 800; opacity: 0; transition: opacity 0.3s ease; pointer-events: none; text-transform: uppercase; letter-spacing: 1px;">
-                        Click to Open →
-                    </div>
-                </a>
-            </div>
+            <h3>Background</h3>
+            <p>I specialize in [your specialties]. My journey in tech started when [brief story about how you got started].</p>
+            
+            <h3>What I Do</h3>
+            <ul>
+                <li>Build responsive web applications</li>
+                <li>Create pixel-perfect UI/UX designs</li>
+                <li>Write clean, maintainable code</li>
+                <li>Embrace retro aesthetics with modern functionality</li>
+            </ul>
 
-            <!-- Map Item 2 -->
-            <div class="map-item">
-                <h3>Project Title 2</h3>
-                <p>Brief description of this project or map. Explain what it shows, the tools used, and its significance.</p>
-                <div class="map-placeholder">
-                    Interactive Map 2<br>
-                    (Replace with iframe or map embed code)
-                </div>
-            </div>
-
-            <!-- Map Item 3 -->
-            <div class="map-item">
-                <h3>Project Title 3</h3>
-                <p>Brief description of this project or map. Explain what it shows, the tools used, and its significance.</p>
-                <div class="map-placeholder">
-                    Interactive Map 3<br>
-                    (Replace with iframe or map embed code)
-                </div>
-            </div>
-
-            <!-- Add more map items as needed -->
+            <h3>Fun Facts</h3>
+            <p>When I'm not coding, you can find me [hobbies]. I'm a big fan of [interests] and I believe [philosophy or belief].</p>
         </div>
-    </section>
+    </div>
 
-    <!-- Footer/Contact Section -->
-    <footer id="contact">
-        <h3>Contact Me</h3>
-        <p>your.email@example.com</p>
-        <div class="contact-links">
-            <a href="#">LinkedIn</a>
-            <a href="#">GitHub</a>
-            <a href="#">Twitter</a>
+    <div class="window" id="window-projects" style="top: 120px; left: 120px; width: 600px; height: 500px;">
+        <div class="window-title-bar">
+            <div class="window-title">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect fill='%23F39C12' width='16' height='16'/%3E%3Cpath fill='%23FFF' d='M2 2h12v3H2zm0 4h12v8H2z'/%3E%3C/svg%3E" alt="">
+                My Projects
+            </div>
+            <div class="window-controls">
+                <button class="window-button minimize">_</button>
+                <button class="window-button maximize">□</button>
+                <button class="window-button close" onclick="closeWindow('projects')">×</button>
+            </div>
         </div>
-        <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.8;">
-            © 2024 Waleed Hasan. All rights reserved.
-        </p>
-    </footer>
+        <div class="window-content">
+            <h2>💼 Portfolio Projects</h2>
+            
+            <div class="project-card">
+                <h4>Project Name 1</h4>
+                <p>A cool project where I built [description]. This showcases my skills in [technologies].</p>
+                <div style="margin-top: 8px;">
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">MongoDB</span>
+                </div>
+                <p style="margin-top: 8px;"><a href="#" target="_blank">View Live →</a> | <a href="#" target="_blank">GitHub →</a></p>
+            </div>
+
+            <div class="project-card">
+                <h4>Project Name 2</h4>
+                <p>An innovative solution for [problem]. Features include [key features].</p>
+                <div style="margin-top: 8px;">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Django</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                </div>
+                <p style="margin-top: 8px;"><a href="#" target="_blank">View Live →</a> | <a href="#" target="_blank">GitHub →</a></p>
+            </div>
+
+            <div class="project-card">
+                <h4>Project Name 3</h4>
+                <p>A retro-inspired [type of project] that demonstrates [skills/concepts].</p>
+                <div style="margin-top: 8px;">
+                    <span class="skill-tag">HTML/CSS</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Canvas API</span>
+                </div>
+                <p style="margin-top: 8px;"><a href="#" target="_blank">View Live →</a> | <a href="#" target="_blank">GitHub →</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="window" id="window-skills" style="top: 140px; left: 140px; width: 500px;">
+        <div class="window-title-bar">
+            <div class="window-title">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect fill='%2327AE60' width='16' height='16'/%3E%3Cpath fill='%23FFF' d='M4 4h8v2H4zm0 3h8v2H4zm0 3h6v2H4z'/%3E%3C/svg%3E" alt="">
+                Skills & Technologies
+            </div>
+            <div class="window-controls">
+                <button class="window-button minimize">_</button>
+                <button class="window-button maximize">□</button>
+                <button class="window-button close" onclick="closeWindow('skills')">×</button>
+            </div>
+        </div>
+        <div class="window-content">
+            <h2>🛠️ Technical Skills</h2>
+            
+            <h3>Frontend</h3>
+            <p>HTML5, CSS3, JavaScript (ES6+), React, Vue.js, Tailwind CSS, SASS/SCSS</p>
+
+            <h3>Backend</h3>
+            <p>Node.js, Python, Django, Express, REST APIs, GraphQL</p>
+
+            <h3>Database</h3>
+            <p>MongoDB, PostgreSQL, MySQL, Firebase, Redis</p>
+
+            <h3>Tools & Others</h3>
+            <p>Git, Docker, AWS, Figma, Photoshop, VS Code, Linux</p>
+
+            <h3>Currently Learning</h3>
+            <p>TypeScript, Next.js, Three.js, Web3</p>
+        </div>
+    </div>
+
+    <div class="window" id="window-contact" style="top: 160px; left: 160px; width: 500px;">
+        <div class="window-title-bar">
+            <div class="window-title">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect fill='%23E74C3C' width='16' height='16'/%3E%3Cpath fill='%23FFF' d='M2 4h12v8H2zm2 2l4 3 4-3v-1l-4 3-4-3z'/%3E%3C/svg%3E" alt="">
+                Contact Me
+            </div>
+            <div class="window-controls">
+                <button class="window-button minimize">_</button>
+                <button class="window-button maximize">□</button>
+                <button class="window-button close" onclick="closeWindow('contact')">×</button>
+            </div>
+        </div>
+        <div class="window-content">
+            <h2>📬 Get In Touch</h2>
+            <p>I'm always open to new opportunities and interesting projects. Feel free to reach out!</p>
+
+            <h3>Email</h3>
+            <p><a href="mailto:your.email@example.com">your.email@example.com</a></p>
+
+            <h3>Social Links</h3>
+            <ul>
+                <li><a href="#" target="_blank">GitHub</a></li>
+                <li><a href="#" target="_blank">LinkedIn</a></li>
+                <li><a href="#" target="_blank">Twitter/X</a></li>
+                <li><a href="#" target="_blank">Instagram</a></li>
+            </ul>
+
+            <h3>Location</h3>
+            <p>[Your City, Country]</p>
+
+            <p style="margin-top: 20px; padding: 12px; background: #FFFFCC; border-left: 3px solid #F39C12;">
+                <strong>Quick Response Time:</strong> I typically respond within 24-48 hours!
+            </p>
+        </div>
+    </div>
+
+    <!-- Taskbar -->
+    <div class="taskbar">
+        <button class="start-button">
+            <img class="start-icon" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23FFF' d='M3 3h8v8H3zm0 10h8v8H3zm10-10h8v8h-8zm0 10h8v8h-8z'/%3E%3C/svg%3E" alt="Start">
+            <span>Start</span>
+        </button>
+        <div class="taskbar-items" id="taskbarItems"></div>
+        <div class="system-tray">
+            <span id="clock">12:00 PM</span>
+        </div>
+    </div>
+
+    <script>
+        // Window dragging functionality
+        let activeWindow = null;
+        let offset = { x: 0, y: 0 };
+
+        document.querySelectorAll('.window-title-bar').forEach(titleBar => {
+            titleBar.addEventListener('mousedown', startDrag);
+        });
+
+        function startDrag(e) {
+            if (e.target.closest('.window-button')) return;
+            
+            activeWindow = e.target.closest('.window');
+            const rect = activeWindow.getBoundingClientRect();
+            offset.x = e.clientX - rect.left;
+            offset.y = e.clientY - rect.top;
+
+            document.addEventListener('mousemove', drag);
+            document.addEventListener('mouseup', stopDrag);
+        }
+
+        function drag(e) {
+            if (!activeWindow) return;
+            activeWindow.style.left = (e.clientX - offset.x) + 'px';
+            activeWindow.style.top = (e.clientY - offset.y) + 'px';
+        }
+
+        function stopDrag() {
+            document.removeEventListener('mousemove', drag);
+            document.removeEventListener('mouseup', stopDrag);
+            activeWindow = null;
+        }
+
+        // Desktop icon functionality
+        document.querySelectorAll('.desktop-icon').forEach(icon => {
+            icon.addEventListener('click', function() {
+                const windowId = this.dataset.window;
+                openWindow(windowId);
+            });
+
+            icon.addEventListener('dblclick', function() {
+                const windowId = this.dataset.window;
+                openWindow(windowId);
+            });
+        });
+
+        function openWindow(windowId) {
+            const window = document.getElementById('window-' + windowId);
+            if (!window) return;
+
+            window.classList.add('active');
+            createTaskbarItem(windowId);
+            bringToFront(window);
+        }
+
+        function closeWindow(windowId) {
+            const window = document.getElementById('window-' + windowId);
+            window.classList.remove('active');
+            removeTaskbarItem(windowId);
+        }
+
+        function createTaskbarItem(windowId) {
+            const existing = document.querySelector(`[data-taskbar="${windowId}"]`);
+            if (existing) return;
+
+            const window = document.getElementById('window-' + windowId);
+            const title = window.querySelector('.window-title').textContent.trim();
+            const icon = window.querySelector('.window-title img').src;
+
+            const item = document.createElement('div');
+            item.className = 'taskbar-item active';
+            item.dataset.taskbar = windowId;
+            item.innerHTML = `<img src="${icon}" alt=""><span>${title}</span>`;
+            
+            item.addEventListener('click', () => {
+                const window = document.getElementById('window-' + windowId);
+                if (window.classList.contains('active')) {
+                    window.classList.remove('active');
+                    item.classList.remove('active');
+                } else {
+                    window.classList.add('active');
+                    item.classList.add('active');
+                    bringToFront(window);
+                }
+            });
+
+            document.getElementById('taskbarItems').appendChild(item);
+        }
+
+        function removeTaskbarItem(windowId) {
+            const item = document.querySelector(`[data-taskbar="${windowId}"]`);
+            if (item) item.remove();
+        }
+
+        function bringToFront(window) {
+            document.querySelectorAll('.window').forEach(w => {
+                w.style.zIndex = w === window ? 100 : 1;
+            });
+        }
+
+        // Clock
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours() % 12 || 12;
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const ampm = now.getHours() >= 12 ? 'PM' : 'AM';
+            document.getElementById('clock').textContent = `${hours}:${minutes} ${ampm}`;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // Auto-open About window on load
+        setTimeout(() => {
+            openWindow('about');
+        }, 2500);
+    </script>
 </body>
 </html>
